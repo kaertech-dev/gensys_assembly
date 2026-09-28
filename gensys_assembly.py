@@ -72,7 +72,7 @@ SETTINGS = load_settings(SETTINGS_FILE)
 # DATABASE
 # ─────────────────────────────────────────────
 
-DB_HOST = os.getenv("DB_HOST", SETTINGS.get("database", "db_host", fallback="192.168.1.38"))
+DB_HOST = os.getenv("DB_HOST", SETTINGS.get("database", "db_host", fallback="192.168.2.5"))
 DB_PORT = int(os.getenv("DB_PORT", SETTINGS.get("database", "db_port", fallback="3306")))
 DB_USER = os.getenv("DB_USER", SETTINGS.get("database", "db_user", fallback="labeling"))
 DB_PASS = os.getenv("DB_PASSWORD", SETTINGS.get("database", "db_password", fallback="labeling"))
