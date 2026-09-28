@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gensys Assembly Station</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <img src="image.png" alt="gensys logo" class="brand-logo" />
+        </div>
+
+        <div class="panel login-panel">
+          <h2>Operator Login</h2>
+
+          <label for="operatorInput">Employee Number</label>
+          <input id="operatorInput" type="text" maxlength="20" placeholder="Enter employee ID" />
+
+          <label for="shiftSelect">Shift</label>
+          <select id="shiftSelect">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+          </select>
+
+          <button id="loginButton" class="primary-btn">Login</button>
+        </div>
+
+        <div class="meta-card">
+          <p class="meta-label">Status</p>
+          <h3 id="operatorSummary">Not logged in</h3>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Assembly Workflow</p>
+            <h1>Gensys Assembly Station</h1>
+          </div>
+          <div class="mini-badge">Web Version</div>
+        </header>
+
+        <div id="statusBanner" class="status-banner info">
+          Ready for login.
+        </div>
+
+        <section class="scan-card">
+          <div class="field-grid">
+            <div class="field-group">
+              <label for="serialInput">Serial Number</label>
+              <input id="serialInput" type="text" placeholder="Scan or type serial" />
+            </div>
+
+            <div class="field-group">
+              <label for="customerInput">Customer Serial</label>
+              <input id="customerInput" type="text" placeholder="Optional customer serial" />
+            </div>
+
+            <div class="field-group full-width">
+              <label for="poInput">PO Number</label>
+              <input id="poInput" type="text" placeholder="Enter PO number" />
+            </div>
+
+            <div class="field-group full-width">
+              <label for="reasonInput">Failure Reason</label>
+              <input id="reasonInput" type="text" placeholder="Enter a failure reason" />
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button id="passButton" class="action-btn pass-btn" type="button">Pass</button>
+            <button id="failButton" class="action-btn fail-btn" type="button">Fail</button>
+          </div>
+        </section>
+
+        <section class="table-card">
+          <div class="table-header">
+            <h2>Recent entries</h2>
+            <button id="clearHistoryBtn" class="secondary-btn" type="button">Clear history</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Serial</th>
+                  <th>PO</th>
+                  <th>Customer</th>
+                  <th>Operator</th>
+                  <th>Shift</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="recordsTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
