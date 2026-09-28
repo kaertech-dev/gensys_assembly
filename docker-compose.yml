@@ -1,0 +1,12 @@
+services:
+  gensys_assembly:
+    build: .
+    image: gensys_assembly
+    container_name: gensys_assembly
+    ports:
+      - "5057:5057"
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - FLASK_ENV=production
